@@ -106,7 +106,7 @@ class SearchHandler:
         search_page.wait_for_selector("body")
         search_page.wait_for_selector(vendor.selectors["listings"])
 
-        soup = BeautifulSoup(search_page.content().encode("utf-8"), 'lxml')
+        soup = BeautifulSoup(search_page.content(), 'lxml')
 
         #listings = self.WebDriver.select_all(search_page, vendor.selectors['listings'])
         listings = soup.select(vendor.selectors['listings'])
