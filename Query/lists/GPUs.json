@@ -117,6 +117,23 @@
                 "require_content": true
             },
             "Exclude": [
+                "Super"
+            ],
+            "ExcludeSettings": {
+                "operator": "or"
+            },
+            "MinimumValue": 200,
+            "MaximumValue": 10000
+        },
+        {
+            "Content": "RTX 5070",
+            "Include": [],
+            "IncludeSettings": {
+                "operator": "xor",
+                "case_sensitive": false,
+                "require_content": true
+            },
+            "Exclude": [
                 "Ti ",
                 "Super"
             ],
