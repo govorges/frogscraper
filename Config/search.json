@@ -35,7 +35,7 @@
                     "description": "An item's promotional offer(s), typically a discount or digital content that comes with a purchase."
                 },
                 "shipping_price": {
-                    "css_selector": ".product-delivery-title > span > strong",
+                    "css_selector": ".price-ship",
                     "type": "misc_price",
                     "required": false,
                     "description": "The cost to ship this item."
