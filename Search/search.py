@@ -173,12 +173,7 @@ class SearchHandler:
                 if item_data[key] is None and selectors[key].get('required', False):
                     missing_keys.append(key)
             if len(missing_keys) > 0:
-                self.Logger.Warn(f"SearchHandler: Dropped Listing for {query} ; Required keys, [{', '.join([x for x in missing_keys])}] not found in listing. (check deferred environment error for more details)")
-                self.defer_environment_error(
-                    ValueError,
-                    f"Required keys, [{', '.join([x for x in missing_keys])}] not found in listing.",
-                    f"{str(item)}"
-                )
+                self.Logger.Warn(f"SearchHandler: Dropped Listing for {query} ; Required keys, [{', '.join([x for x in missing_keys])}] not found in listing.")
                 continue
                 
             listing = Listing(item_data)
