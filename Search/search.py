@@ -169,8 +169,8 @@ class SearchHandler:
                 item_data[key] = value
 
             missing_keys = []
-            for key in item_data.keys():
-                if item_data[key] is None and selectors[key].get('required', False):
+            for key in selectors.keys():
+                if item_data.get(key) is None and selectors[key].get('required', False):
                     missing_keys.append(key)
             if len(missing_keys) > 0:
                 self.Logger.Warn(f"SearchHandler: Dropped Listing for {query} ; Required keys, [{', '.join([x for x in missing_keys])}] not found in listing.")
@@ -184,6 +184,8 @@ class SearchHandler:
                 if not isinstance(key_data, str):
                     continue
                 elif selectors[key]["type"] in ["link", "image"]:
+                    continue
+                elif selectors[key].get("ignore_filter", False) == True:
                     continue
                 check_strings.append(key_data)
 

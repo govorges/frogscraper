@@ -108,6 +108,100 @@
                 }
             }
         },
+        "usa_amazon": {
+            "metadata": {
+                "name": "USA Amazon",
+                "homepage": "https://amazon.com",
+                "color": "yellow"
+            },
+            "strip_phrases": [],
+            "url": {
+                "start": "https://www.amazon.com/s?k=",
+                "end": "&ref=nb_sb_noss"
+            },
+            "preload": "https://amazon.com",
+            "selectors": {
+                "listings": "[data-component-type='s-search-result']",
+                "title": {
+                    "css_selector": "a > h2",
+                    "type": "text",
+                    "required": true,
+                    "description": "The listing's title"
+                },
+                "url": {
+                    "css_selector": "[data-cy='title-recipe'] > a",
+                    "type": "link",
+                    "required": true,
+                    "description": "The link to the listing's page."
+                },
+                "price": {
+                    "css_selector": ".a-price-whole",
+                    "type": "price",
+                    "required": true,
+                    "description": "The listing's price"
+                },
+                "promo": {
+                    "css_selector": "[data-cy='delivery-recipe'] > .a-row:last-child > .a-row > span > span",
+                    "type": "text",
+                    "required": false,
+                    "description": "Usually a stock count on Amazon",
+                    "ignore_filter": true
+                },
+                "thumbnail": {
+                    "css_selector": "img",
+                    "type": "image",
+                    "required": false,
+                    "description": "The listing's thumbnail"
+                }
+            }
+        },
+        "ca_amazon": {
+            "metadata": {
+                "name": "CA Amazon",
+                "homepage": "https://amazon.ca",
+                "color": "yellow"
+            },
+            "strip_phrases": [],
+            "url": {
+                "start": "https://www.amazon.ca/s?k=",
+                "end": "&ref=nb_sb_noss"
+            },
+            "preload": "https://amazon.ca",
+            "selectors": {
+                "listings": "[data-component-type='s-search-result']",
+                "title": {
+                    "css_selector": "a > h2",
+                    "type": "text",
+                    "required": true,
+                    "description": "The listing's title"
+                },
+                "url": {
+                    "css_selector": "[data-cy='title-recipe'] > a",
+                    "type": "link",
+                    "required": true,
+                    "description": "The link to the listing's page."
+                },
+                "price": {
+                    "css_selector": ".a-price-whole",
+                    "type": "price",
+                    "required": true,
+                    "description": "The listing's price"
+                },
+                "promo": {
+                    "css_selector": "[data-cy='delivery-recipe'] > .a-row:last-child > .a-row > span > span",
+                    "type": "text",
+                    "required": false,
+                    "description": "Usually a stock count on Amazon",
+                    "ignore_filter": true
+                },
+                "thumbnail": {
+                    "css_selector": "img",
+                    "type": "image",
+                    "required": false,
+                    "description": "The listing's thumbnail"
+                }
+            }
+        },
         "de_ebay": {
             "metadata": {
                 "name": "DE Ebay",
