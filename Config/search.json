@@ -155,6 +155,60 @@
                 }
             }
         },
+        "ca_newegg": {
+            "metadata": {
+                "name": "USA Newegg",
+                "homepage": "https://newegg.ca",
+                "color": "blue"
+            },
+            "strip_phrases": [
+                "Opens in a new window or tab",
+                "New Listing"
+            ],
+            "url": {
+                "start": "https://www.newegg.ca/p/pl?d=",
+                "end": ""
+            },
+            "selectors": {
+                "listings": ".list-wrap > div > div.item-cell",
+                "title": {
+                    "css_selector": ".item-info > .item-title",
+                    "type": "text",
+                    "required": true,
+                    "description": "The listing's title."
+                },
+                "url": {
+                    "css_selector": ".item-info > .item-title",
+                    "type": "link",
+                    "required": true,
+                    "description": "The listing's dedicated product page."
+                },
+                "promo": {
+                    "css_selector": ".item-promo",
+                    "type": "text",
+                    "required": false,
+                    "description": "An item's promotional offer(s), typically a discount or digital content that comes with a purchase."
+                },
+                "shipping_price": {
+                    "css_selector": ".price-ship",
+                    "type": "misc_price",
+                    "required": false,
+                    "description": "The cost to ship this item."
+                },
+                "price": {
+                    "css_selector": ".price-current",
+                    "type": "price",
+                    "required": true,
+                    "description": "The listing's price"
+                },
+                "thumbnail": {
+                    "css_selector": "img",
+                    "type": "image",
+                    "required": false,
+                    "description": "The listing's thumbnail"
+                }
+            }
+        },
         "ca_amazon": {
             "metadata": {
                 "name": "CA Amazon",
