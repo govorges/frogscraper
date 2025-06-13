@@ -69,7 +69,14 @@
             "boxed with",
             "artifacts",
             "out of stock",
-            "dock "
+            "dock ",
+            "cooler fan",
+            "turbofan",
+            "95mm",
+            "75mm",
+            "graphics card fan",
+            "87mm",
+            "4pin 12v"
         ]
     },
     "queries": [
